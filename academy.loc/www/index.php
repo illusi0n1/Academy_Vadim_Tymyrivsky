@@ -3,16 +3,51 @@
 <head>
 	<meta charset="utf-8" >
 	<title> Academy </title>
+    <link href="style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-		<ul>
-			<li> <a href="ins_and_del.php"> Добавлення і вилучення рейсів, міст, авіакомпаній </a> </li>
-			<li> <a href="select_all.php"> Вивід усіх рейсів, міст, авіакомпаній </a> </li>
-			<li> <a href="searching.php"> Пошук по частині назві рейсу, міст, авіакомпаній </a> </li>
-			<li> <a href="all_flights_where.php"> Вивід усіх рейсів із заданого міста, в задане місто, заданої компанії, заданої марки літака </a> </li>
-			<li> <a href="select_planes.php"> Вивід марок літаків, що використовуються заданою компанією </a> </li>
-			<li> <a href="select_towns.php"> Вивід усіх міст, в які літає дана компанія </a> </li>
-		</ul>
+<div class="header"><center>My academy project</center></div>
+<div class="main">
+    <div class="menu">
+        <ul>
+            <li> <a href="index.php?controller=companies&action=display"> Companies </a> </li>
+            <li> <a href="index.php?controller=countries&action=display"> Countries </a> </li>
+            <li> <a href="index.php?controller=flights&action=display"> Flights </a> </li>
+            <li> <a href="index.php?controller=persons&action=display"> Persons </a> </li>
+            <li> <a href="index.php?controller=planes&action=display"> Planes </a> </li>
+            <li> <a href="index.php?controller=towns&action=display"> Towns </a> </li>
+        </ul>
+    </div>
+    <div class="content">
+        <?php
+        require ("../config/db_conn.php");
+        require ("../models/base.php");
+
+        $controller = $_GET["controller"];
+
+        switch($controller) {
+            case "companies":
+                include ("../controllers/controllerCompanies.php");
+                break;
+            case "countries":
+                include ("../controllers/controllerCountries.php");
+                break;
+            case "flights":
+                include ("../controllers/controllerFlights.php");
+                break;
+            case "persons":
+                include ("../controllers/controllerPersons.php");
+                break;
+            case "planes":
+                include ("../controllers/controllerPlanes.php");
+                break;
+            case "towns":
+                include ("../controllers/controllerTowns.php");
+                break;
+        }
+        ?>
+    </div>
+</div>
 
 </body>
 </html>

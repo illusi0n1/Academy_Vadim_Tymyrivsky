@@ -1,0 +1,59 @@
+body{
+	margin: 0 auto;
+	background-color: black;
+}
+
+.header {
+	background-color: black;
+	margin:0 auto;
+	width: 1200px;
+	color: white;
+	font-size: 25pt;
+	font-family: comic sans ms, sans-serif;
+	display: block;
+}
+
+.main{
+	margin: 0 auto;
+	width: 1300px;
+	height: auto;
+}
+
+
+.content{
+	background-color: #787878;
+	width: 1150px;
+	height: 590px;
+	position: absolute;
+	display: inline-block;
+}
+
+.menu { 
+	background-color: #181818;
+	width: 150px;
+	height: 590px;
+	display: inline-block;
+}
+
+a{
+	color: yellow; 
+	font-weight: bold;
+	font-family: arial, sans-serif;
+}
+
+a:hover{
+	background-color: black;
+}
+
+ul{
+	padding:0;
+	margin:0;
+	list-style: none;
+}
+
+li>a{
+	background-color: #505050;
+	display:block;
+	padding:8px 20px;
+
+}
